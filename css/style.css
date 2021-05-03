@@ -1,0 +1,47 @@
+body {
+  font-weight: 600;
+}
+
+.bg-light {
+  background: #f6f5fa !important;
+}
+
+.d-flex {
+  flex-wrap: wrap !important;
+}
+
+.product-img {
+  width: 100px;
+}
+
+.quantity {
+  width: 50px;
+  height: 50px;
+  font-weight: 500;
+}
+
+.plus,
+.minus,
+.remove {
+  cursor: pointer;
+}
+
+.remove {
+  font-size: 25px;
+}
+
+.cart-added {
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.cart-added.show {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all 0.2s linear;
+}
