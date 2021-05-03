@@ -81,7 +81,13 @@ function productHTML(product, index) {
 
 /* Add To Cart */
 function addToCart(index) {
-  if (cart.indexOf(products[index]) != -1) return;
+  if (cart.indexOf(products[index]) != -1) {
+    products[index].quantity++;
+    // Update DOM
+    displayCartItem(cart);
+    handleCheckout(cart);
+    return;
+  }
 
   cart.push(products[index]);
 
@@ -240,32 +246,31 @@ function scrollTop() {
 }
 
 /* Go To Home */
-goToHomes.forEach((goToHome) =>
-  goToHome.addEventListener('click', () => {
-    productsSection.classList.add('d-block');
-    productsSection.classList.remove('d-none');
+function homePage() {
+  productsSection.classList.add('d-block');
+  productsSection.classList.remove('d-none');
 
-    cartSection.classList.add('d-none');
-    cartSection.classList.remove('d-block');
+  cartSection.classList.add('d-none');
+  cartSection.classList.remove('d-block');
 
-    // Scroll Top
-    scrollTop();
-  })
-);
+  // Scroll Top
+  scrollTop();
+}
 
 /* View Cart */
-viewCarts.forEach((viewCart) =>
-  viewCart.addEventListener('click', () => {
-    productsSection.classList.add('d-none');
-    productsSection.classList.remove('d-block');
+function cartPage() {
+  productsSection.classList.add('d-none');
+  productsSection.classList.remove('d-block');
 
-    cartSection.classList.add('d-block');
-    cartSection.classList.remove('d-none');
+  cartSection.classList.add('d-block');
+  cartSection.classList.remove('d-none');
 
-    // Scroll Top
-    scrollTop();
-  })
-);
+  // Scroll Top
+  scrollTop();
+}
+
+goToHomes.forEach((goToHome) => goToHome.addEventListener('click', homePage));
+viewCarts.forEach((viewCart) => viewCart.addEventListener('click', cartPage));
 
 /* Init */
 function init() {
