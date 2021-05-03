@@ -6,69 +6,46 @@ const products = [
   {
     name: 'iPhone 11 128GB Black',
     price: 1000,
-    productID: randomProductID(),
+    productID: 1,
     img: 'img/product-1.png',
     quantity: 1,
-    totalPrice: function () {
-      return this.price * this.quantity;
-    },
   },
   {
     name: 'iPhone 11 64GB Silver',
     price: 800,
-    productID: randomProductID(),
+    productID: 2,
     img: 'img/product-2.png',
     quantity: 1,
-    totalPrice: function () {
-      return this.price * this.quantity;
-    },
   },
   {
     name: 'Apple Watch',
     price: 400,
-    productID: randomProductID(),
+    productID: 3,
     img: 'img/product-3.png',
     quantity: 1,
-    totalPrice: function () {
-      return this.price * this.quantity;
-    },
   },
   {
     name: 'iMac',
     price: 2400,
-    productID: randomProductID(),
+    productID: 4,
     img: 'img/product-4.jpg',
     quantity: 1,
-    totalPrice: function () {
-      return this.price * this.quantity;
-    },
   },
   {
     name: 'Tennis Ball',
     price: 50,
-    productID: randomProductID(),
+    productID: 5,
     img: 'img/product-5.png',
     quantity: 1,
-    totalPrice: function () {
-      return this.price * this.quantity;
-    },
   },
   {
     name: 'Telephone',
     price: 200,
-    productID: randomProductID(),
+    productID: 6,
     img: 'img/product-6.png',
     quantity: 1,
-    totalPrice: function () {
-      return this.price * this.quantity;
-    },
   },
 ];
-
-/* Random Product ID */
-function randomProductID() {
-  return `PRODUCTID${Math.round(Math.random() * 1000000)}`;
-}
 
 /* Display Product */
 function displayProduct(products) {
@@ -220,7 +197,7 @@ function handleCheckout(products) {
 
   // Subtotal Price
   const subtotal = products
-    .map((product) => product.totalPrice())
+    .map((product) => product.price * product.quantity)
     .reduce((total, price) => total + price);
 
   checkoutDiv.innerHTML = /* html */ `
