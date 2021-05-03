@@ -157,9 +157,11 @@ function cartItemHTML(product, index) {
         value="${product.quantity}"
       />
       <span onclick="increamentQuantity(${index})" class="plus"><i class="fa fa-plus"></i></span>
-      <h4 class="price d-inline-block my-0 mx-sm-5 mr-5">$${(
-        product.quantity * product.price
-      ).toFixed(2)}</h4>
+      <span class="mx-3 multiply"><i class="fa fa-times text-dark"></i
+      ></span>
+      <h4 class="price d-inline-block my-0 mr-5 ">$${product.price.toFixed(
+        2
+      )}</h4>
       <span onclick="removeProduct(${index})" class="remove"
         ><i class="fa fa-times text-danger"></i
       ></span>
@@ -212,7 +214,7 @@ const checkoutDiv = document.querySelector('#checkout-process');
 /* Handle Checkout */
 function handleCheckout(products) {
   if (products.length < 1) {
-    checkoutDiv.innerHTML = 'Your cart is empty!';
+    checkoutDiv.innerHTML = 'Your cart is Empty!';
     return;
   }
 
