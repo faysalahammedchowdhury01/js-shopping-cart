@@ -26,6 +26,10 @@ body {
   cursor: pointer;
 }
 
+.multiply {
+  font-size: 20px;
+}
+
 .remove {
   font-size: 25px;
 }
@@ -44,4 +48,22 @@ body {
   transform: translateX(0px);
   opacity: 1;
   transition: all 0.2s linear;
+}
+
+.cart-item .plus,
+.cart-item .minus {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.cart-item:hover .plus,
+.cart-item:hover .minus {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+span,
+input,
+h4 {
+  vertical-align: middle !important;
 }
