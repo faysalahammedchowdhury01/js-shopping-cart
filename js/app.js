@@ -182,6 +182,8 @@ function changeQuantity(index, self) {
 
 /* Remove Product From Cart */
 function removeProduct(index) {
+  // Update Quantity
+  cart[index].quantity = 1;
   cart.splice(index, 1);
   // Update DOM
   displayCartItem(cart);
