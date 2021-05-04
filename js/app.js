@@ -81,7 +81,7 @@ function productHTML(product, index) {
 
 /* Add To Cart */
 function addToCart(index) {
-  if (cart.indexOf(products[index]) != -1) {
+  if (cart.find((el) => el == products[index])) {
     products[index].quantity++;
     // Update DOM
     displayCartItem(cart);
